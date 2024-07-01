@@ -26,4 +26,28 @@ In order to build an _image_ from this dockerfile, locate the directory where th
 docker build [-t your_image_name] .
 ```
 
+This will build a docker **image** not a container. To then use the image to create an interactive container, use the following:
+
+``` sh
+docker run --tty --interactive < your_image_name >
+```
+
+Once you are finished and have exited the container, you can list it using:
+
+``` sh
+docker container list --all
+```
+
+If you wish to launch the container again, run:
+
+``` sh
+docker attach < your_container_ID_or_name >
+```
+
+or if it is no longer required:
+
+```sh
+docker rm < your_container_ID_or_name >
+```
+
 **Godspeed!**
